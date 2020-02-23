@@ -1,132 +1,209 @@
-<header>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"> </script>
+  <style>
+
+    /*   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
-  <style>
+  */
     header {
-  position: relative;
-  background-color: black;
-  height: 75vh;
-  min-height: 25rem;
-  width: 100%;
-  overflow: hidden;
-}
+      position: relative;
+      background-color: black;
+      height: 75vh;
+      min-height: 25rem;
+      width: 100%;
+      overflow: hidden;
+    }
 
-body, html {
-  height: 100%;
-}
+    body, html {
+      height: 100%;
+    }
 
-.parallax {
-  /* The image used */
-  background-image: url("https://www.groovetoyota.com/blogs/1070/wp-content/uploads/2017/01/avalon-interior.jpg");
+    .parallax {
+      /* The image used */
+      background-image: url("https://www.groovetoyota.com/blogs/1070/wp-content/uploads/2017/01/avalon-interior.jpg");
 
-  /* Full height */
-  height: 100%;
+      /* Full height */
+      height: 100%;
 
-  /* Text Color */
-  color: white;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.overlayGreen{
-  background: green;
-  opacity: .1;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-header video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 0;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
+      /* Text Color */
+      color: white;
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
 
-header .container {
-  position: relative;
-  z-index: 2;
-}
+    .customizeDescription{
+      background-image: url("https://api.time.com/wp-content/uploads/2019/03/hero403x-0310.jpg");
+      background-position: 10% 50%;
+      /* Full height */
+      height: 35vh;
 
-header .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  opacity: 0.5;
-  z-index: 1;
-}
+      /* Text Color */
+      color: white;
+      top: 40%;
+    }
 
-@media (pointer: coarse) and (hover: none) {
-  header {
-    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
-  }
-  header video {
-    display: none;
-  }
-}
+    .breaker{
+      position: absolute;
+      height: 10px;
+      width:100%;
+      background-color: black;
+    }
+    .overlayGreen{
+      background: green;
+      opacity: .1;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+    header video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 0;
+      -ms-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+    }
 
-/* for BUTTON */
-.containerButton,
-.first{
-  position: absolute;
-}
+    header .container {
+      position: relative;
+      z-index: 2;
+    }
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-.containerButton {
-  margin: auto;
-  top: 200px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 170px;
-  height: 50px;
-  transition: all 0.3s ease; 
-}
+    header .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: black;
+      opacity: 0.5;
+      z-index: 1;
+    }
 
-.wrap {
-  width: 100%;
-  height: 50px;
-  border: 2px solid #FFF;
-  transition: all 0.3s ease;
-  border-radius: 5px;
-}
+    @media (pointer: coarse) and (hover: none) {
+      header {
+        background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+      }
+      header video {
+        display: none;
+      }
+    }
 
-.first {
-  width: 100%;
-  height: 50px;
-  font-family: 'Open Sans', sans-serif;
-  transition: all 0.2s ease-in-out;
-  font-size: 17px;
-  text-transform: uppercase;
-  color: #FFF;
-  letter-spacing: 2px; 
-  text-align: center;
-  vertical-align: middle;
-  line-height: 50px;
-}
-.containerButton:hover{
-  width:240px;
-}
-.first:hover{
-  color: red;
-}
+    .aboutUs{
+      position: absolute;
+      height: 400px;
+      width:100%;
+      background-color: white;
+    }
+
+    /* SLIDER */
+    .carousel-item {
+      height: 90vh;
+      min-height: 350px;
+      background: no-repeat center center scroll;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
 
 
-/* END OF BUTTON */
-</style>
+    /* for BUTTON */
+    .containerButton,
+    .first{
+      position: absolute;
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+    .containerButton {
+      margin: auto;
+      top: 200px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 170px;
+      height: 50px;
+      transition: all 0.3s ease; 
+    }
+
+    .wrap {
+      width: 100%;
+      height: 50px;
+      border: 2px solid #FFF;
+      transition: all 0.3s ease;
+      border-radius: 5px;
+    }
+
+    .first {
+      width: 100%;
+      height: 50px;
+      font-family: 'Open Sans', sans-serif;
+      transition: all 0.2s ease-in-out;
+      font-size: 17px;
+      text-transform: uppercase;
+      color: #FFF;
+      letter-spacing: 2px; 
+      text-align: center;
+      vertical-align: middle;
+      line-height: 50px;
+    }
+    .containerButton:hover{
+      width:240px;
+    }
+    .first:hover{
+      color: red;
+    }
+
+
+    /* END OF BUTTON */
+
+    </style>
+
+</head>
+
+<header>
+<!-- NAV BAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Virtus et Scientia</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Find your Car</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Build</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
   <div class="overlay"></div>
   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
     <source src="https://www.videvo.net/videvo_files/converted/2015_08/preview/Spedometer.mp440174.webm" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
@@ -151,8 +228,8 @@ header .overlay {
 
 <body>
   <div class="parallax">
-  <div class="overlayGreen">
-  </div>
+    <div class="overlayGreen">
+    </div>
     <div class="row">
       <div class="col-md-8 mx-auto">
           <h3>Number 15: Burger King Foot Lettuce</h3>
@@ -163,5 +240,105 @@ header .overlay {
           <p>The post went live at 11:38 PM on July 16, and a mere 20 minutes later, the Burger King in question was alerted to the rogue employee. At least, I hope he's rogue. How did it happen? Well, the BK employee hadn't removed the Exif data from the uploaded photo, which suggested the culprit was somewhere in Mayfield Heights, Ohio. This was at 11:47. Three minutes later at 11:50, the Burger King branch address was posted with wishes of happy unemployment. 5 minutes later, the news station was contacted by another 4channer. And three minutes later, at 11:58, a link was posted: BK's "Tell us about us" online forum. The foot photo, otherwise known as exhibit A, was attached. Cleveland Scene Magazine contacted the BK in question the next day. When questioned, the breakfast shift manager said "Oh, I know who that is. He's getting fired." Mystery solved, by 4chan. Now we can all go back to eating our fast food in peace. </p>
       </div>
     </div>
+  </div>
+
+<!-- SLIDESHOW -->  
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <!-- Slide One - Set the background image for this slide in the line below -->
+      <div class="carousel-item active" style="background-image: url('https://wallpapercave.com/wp/MGMMfuQ.jpg')">
+        <div class="carousel-caption d-none d-md-block">
+          <h3 class="display-4">Experience the Future</h3>
+          <p class="lead">With top-notch technology from new models.</p>
+        </div>
+      </div>
+      <!-- Slide Two - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image: url('https://www.hdcarwallpapers.com/walls/2020_toyota_land_cruiser_heritage_edition_4k-HD.jpg')">
+        <div class="carousel-caption d-none d-md-block">
+          <h3 class="display-4">Reach the Summit</h3>
+          <p class="lead">You will only have the best experience.</p>
+        </div>
+      </div>
+      <!-- Slide Three - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80')">
+        <div class="carousel-caption d-none d-md-block">
+          <h3 class="display-4">Surpass the Limit</h3>
+          <p class="lead">We like to blow your expectations.</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+  </div>
+
+<div class="breaker">
+</div>
+
+<!-- ANOTHER SECTION -->
+    <div class="customizeDescription">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <h1 class="display-2">Make Your Own</h1>
+          <p class="lead"> Using the services of Virtus et Scientia, not only can you find the best car deals by Toyota, but you can also get to <a href="https://some-website.com">customize your own car</a>!</p>
+        </div>
+      </div>
+    </div>
+  <!-- ABOUT US -->
+  <div class="bg-dark aboutUs">
+        <!-- Page Content -->
+  <div class="bg-success text-center py-3 mb-4">
+    <div class="container">
+      <h1 class="font-weight-light text-white">About Us</h1>
+    </div>
+  </div>
+    <div class="container">
+      <div class="row">
+        <!-- Team Member 1 -->
+        <div class="col-xl-3 col-md-6 mb-3">
+          <div class="card border-0 shadow">
+            <img src="https://scontent.fmnl4-1.fna.fbcdn.net/v/t31.0-8/s960x960/25073221_1774868472533140_8438047959028331544_o.jpg?_nc_cat=103&_nc_ohc=jrIEEGTw9IEAX8yx4rj&_nc_ht=scontent.fmnl4-1.fna&_nc_tp=7&oh=f55232d24d070316737d321bddb8dc0d&oe=5EFF63FB" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">Rey Delima</h5>
+              <div class="card-text text-black-50">Web Developer</div>
+            </div>
+          </div>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="col-xl-3 col-md-6 mb-3">
+          <div class="card border-0 shadow">
+            <img src="https://scontent.fmnl4-6.fna.fbcdn.net/v/t1.0-9/84143960_2968431449848369_3622852811651284992_n.jpg?_nc_cat=108&_nc_ohc=2LWiToAegv8AX_Lj40n&_nc_ht=scontent.fmnl4-6.fna&oh=ca15393d3d65cf4fed25e7361f3301fc&oe=5EB570E7" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">Nilo Jatico</h5>
+              <div class="card-text text-black-50">Web Developer</div>
+            </div>
+          </div>
+        </div>
+        <!-- Team Member 3 -->
+        <div class="col-xl-3 col-md-6 mb-3">
+          <div class="card border-0 shadow">
+            <img src="https://scontent.fmnl4-5.fna.fbcdn.net/v/t1.0-9/s960x960/81637383_10221712192739224_8092444527194800128_o.jpg?_nc_cat=106&_nc_ohc=uoqifUoxPAIAX_FjuFo&_nc_ht=scontent.fmnl4-5.fna&_nc_tp=7&oh=e8d35be09cb8d73ee47f47edd6404644&oe=5EBD82E0" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">Luigi Valera</h5>
+              <div class="card-text text-black-50">Web Developer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
   </div>
 </body>

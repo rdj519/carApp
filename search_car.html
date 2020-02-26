@@ -3,9 +3,17 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+
       /* INSERT CODE HERE */
     </script>
     <style>
+      .spacer{
+        height:100px;
+      }
+
+      h1{
+        font-size: 40px;
+      }
 
     </style>
     
@@ -45,6 +53,37 @@
       </nav>
     </header>
 
+    <div class="spacer">
+    </div>
+
+    <h1> Find your Car!!! </h1>
+    <!--Blue select-->
+    <select class="mdb-select md-form colorful-select dropdown-primary" searchable="Search here..">
+      <option value="1">SUV</option>
+      <option value="2">Truck</option>
+      <option value="3">Sports</option>
+    </select>
+
+    <label class="mdb-main-label">Select</label>
+
+    <select class="mdb-select" searchable="Search here..">
+      <option value="1" disabled selected>Price Range</option>
+      <option value="2" data-icon="https://mdbootstrap.com/img/Photos/Avatars/avatar-1.jpg" class="rounded-circle">
+        $0 - $999
+        </option>
+      <option value="3" data-icon="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle">
+        $1000 - $9999
+        </option>
+      <option value="4" data-icon="https://mdbootstrap.com/img/Photos/Avatars/avatar-3.jpg" class="rounded-circle">
+        $10000 - $24999
+        </option>
+      <option value="5" data-icon="https://mdbootstrap.com/img/Photos/Avatars/avatar-3.jpg" class="rounded-circle">
+        $25000 - $49999
+        </option>
+    </select>
+    <button> Find </button>
+
+    sort by... price, release date
 </body>
 
 </html>

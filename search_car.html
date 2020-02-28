@@ -3,8 +3,147 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-
       /* INSERT CODE HERE */
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript">
+      
+      /*
+      similar ... for filtering as search
+      $("#filter").change(function(){
+          if ($("#filter").val() == "all"){
+            sum = getSum(expenses);
+            $(".food").show();  //similar to $(".food").css("visibility", "");
+            $(".transpo").show();
+            $(".bills").show();
+          }
+          else if($("#filter").val() == "food"){
+            sum = getAltSum($("#filter").val(), expenses);
+            $(".food").show();
+            $(".transpo").hide(); //similar to $(".transpo").css("visibility", "hidden");
+            $(".bills").hide();
+          }
+          else if($("#filter").val() == "transpo"){
+            sum = getAltSum($("#filter").val(), expenses);
+            $(".food").hide();
+            $(".transpo").show();
+            $(".bills").hide();
+          }
+          else if($("#filter").val() == "bills"){
+            sum = getAltSum($("#filter").val(), expenses);
+            $(".food").hide();
+            $(".transpo").hide();
+            $(".bills").show();
+          }
+          //adjusts according to chosen filter
+          $("#total").html(sum.toFixed(2));
+        }) */
+    </script>
+
+    <script type="text/javascript">
+      class Car {
+        constructor(vehicleBrand, vehicleClass, vehicleType, bodyStyle, capacity, price) {
+          this.vehicleBrand = vehicleBrand; 
+          this.vehicleClass = vehicleClass; /*SUV, Sedan, Truck, Sports*/
+          this.vehicleType = vehicleType; /* Civilian car, etc. */
+          this.bodyStyle = bodyStyle; /* 4-door SUV, etc */
+          this.capacity = capacity; /* 4 (driver and three passengers), etc. */
+          this.price = price; /* $10000000 etc. */
+          this.colors = new Array(); /* can be added and edited */  
+          this.photoLink = new Array(); /* photoLinks corresponding to same index number color */
+          this.desc = new Array(); /* descriptions of car */
+        }
+        /* useful for admin tools */
+
+
+        /* this function actually is only here until the first phase, this should be done by the admin */
+        addDescription(desc)
+        {
+          this.desc.push(desc);
+        }
+
+        /* get description */
+        getDescription(num)
+        {
+          return this.desc[num];
+        }
+
+        /* delete description */
+        deleteDescription(num)
+        {
+          var x = num;
+          return this.desc.splice(num,1);
+        }
+
+        /* get sizes */
+        getDescriptionSize()
+        {
+          return this.desc.length;
+        }
+        getColorSize()
+        {
+          return this.colors.length;
+        }
+        getPhotoLinkSize()
+        {
+          return this.photoLink.length;
+        }
+
+        /* adds color */
+        addColor(color)
+        {
+            return this.colors.push(color);
+        }
+
+        /* This function returns the color deleted if it existed */
+        deleteColor(color) 
+        {
+          var x = color;
+          return this.colors.splice(this.colors.indexOf(x),1);
+        }
+
+        /* get color at index num */
+        getColor(num)
+        {
+          return this.colors[num];
+        }
+
+        /* set photolink*/
+        addPhotoLink(link)
+        {
+          this.photoLink.push(link);
+        }
+
+        /* delete photolink by num */
+        deletePhotoLink(num)
+        {
+          var x = num;
+          return this.photoLink.splice(num,1);
+        }
+
+        /* get photolink at index num */
+        getPhotoLink(num)
+        {
+          this.photoLink[num];
+        }
+      }
+      
+      /* hard coded stock of cars*/
+      var stock = new Array();
+
+      /* stock#1 */
+      dubsta = new Car("Benefactor", "SUV", "Civilian", "4-Door SUV", 4, 23750);
+      dubsta.addColor("red");
+      dubsta.addPhotoLink("https://vignette.wikia.nocookie.net/gtawiki/images/c/c0/Dubsta-GTAV-front.png/revision/latest?cb=20160409171730");
+      dubsta.addColor("black");
+      dubsta.addPhotoLink("https://vignette.wikia.nocookie.net/gtawiki/images/f/fa/Dubsta2-GTAV-front.png/revision/latest?cb=20160318211333");
+      dubsta.addDescription("The Dubsta features good ground clearance, such that its axles and differential can be viewed from a slightly high angle. The SUV features a high displacement engine, presumably a V12 engine based on the badge on the back, but the cover looks like a V8. This is sent through a permanent four wheel drive system, and then finally through large, high-profile tyres to the ground. The Dubsta is one of the most capable off-roading SUV's in the game, since it has the ability to climb over rocks and make it up steep mountains without getting damaged at all and without hesitation, as its V12 supplies an excellent amount of torque.");
+      dubsta.addDescription("This SUV sadly suffers from massive body roll both on-road and off-road due to its narrowness. Going over bumps or small debris at high speeds may flip the vehicle entirely. Giving the Dubsta off-road wheels is a viable method to alleviate this setback, fortunately.");
+      dubsta.addDescription("Its heavy weight can be useful when ramming other cars or pushing them. By feathering the throttle, it is possible to push a medium weight car with ease. The V12 engine, if untuned, will struggle against the weight and thus it cannot attain high speeds, and has average acceleration.");
+
+      stock.push(dubsta);
+
+
+
     </script>
     <style>
       .spacer{
@@ -62,6 +201,8 @@
       <option value="1">SUV</option>
       <option value="2">Truck</option>
       <option value="3">Sports</option>
+      <option value="4">Sedan</option>
+      <option value="5">All</option>
     </select>
 
     <label class="mdb-main-label">Select</label>

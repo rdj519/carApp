@@ -273,6 +273,9 @@
         border: 30px solid gray;
       }
 
+      #searchArea {
+        text-align: center;
+      }
 
       #carListContainer{
         margin: auto;
@@ -375,26 +378,26 @@
         <div class="container">
           <a class="navbar-brand" href="#">Virtus et Scientia</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+            <span class="navbar-toggler-icon"></span>
+          </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="user.html">Username</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home
-                      <span class="sr-only">(current)</span>
-                    </a>
+                <a class="nav-link" href="user.html">User Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="search_car.html">Find your Car</a>
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="search_car.html">Find your Car
+                  <span class = "sr-only"> (current) </span>
+                </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="build.html">Build</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="contact.html">Contact</a>
               </li>
             </ul>
           </div>
@@ -406,8 +409,10 @@
     </div>
     
     <div id="container">
+    <div id="searchArea">
       <h1> Find your Car!!! </h1>
       <!--Blue select-->
+       <label class="mdb-main-label">Class</label>
       <select class="mdb-select md-form colorful-select dropdown-primary" searchable="Search here.." id="filterClass">
         <option value="1">All</option>
         <option value="2">SUV</option>
@@ -416,7 +421,7 @@
         <option value="5">Truck</option>
       </select>
 
-      <label class="mdb-main-label">Select</label>
+      <label class="mdb-main-label">Price</label>
 
       <select id="filterPrice" class="mdb-select" searchable="Search here..">
         <option value="1" selected>All</option>
@@ -427,6 +432,7 @@
         <option value="6">$100000 - $199000</option>
       </select>
       <button> Find </button>
+    </div>
 
       <div id="carListContainer">
 
@@ -507,7 +513,7 @@
                 <p class="att"> Name: Tornado</p>
                 <p class="att"> Brand: DeClasse</p>
                 <p class="att"> Class: Sports</p>
-                <p class="att"> Body Style: 2-Door Hardtop/Convertible</p>
+                <p class="att"> Body Style: 2-Door Convertible</p>
                 <p class="att"> Capacity: 2 people</p>
                 <p class="att"> Price: $55500</p>
                 <button type="button" class="btn btn-success" id = "order" >Add to Cart</button>

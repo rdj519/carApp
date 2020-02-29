@@ -5,43 +5,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
       /* INSERT CODE HERE */
     </script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript">
-      
-      /*
-      similar ... for filtering as search
-      $("#filter").change(function(){
-          if ($("#filter").val() == "all"){
-            sum = getSum(expenses);
-            $(".food").show();  //similar to $(".food").css("visibility", "");
-            $(".transpo").show();
-            $(".bills").show();
-          }
-          else if($("#filter").val() == "food"){
-            sum = getAltSum($("#filter").val(), expenses);
-            $(".food").show();
-            $(".transpo").hide(); //similar to $(".transpo").css("visibility", "hidden");
-            $(".bills").hide();
-          }
-          else if($("#filter").val() == "transpo"){
-            sum = getAltSum($("#filter").val(), expenses);
-            $(".food").hide();
-            $(".transpo").show();
-            $(".bills").hide();
-          }
-          else if($("#filter").val() == "bills"){
-            sum = getAltSum($("#filter").val(), expenses);
-            $(".food").hide();
-            $(".transpo").hide();
-            $(".bills").show();
-          }
-          //adjusts according to chosen filter
-          $("#total").html(sum.toFixed(2));
-        }) */
+    
+    <script src= "https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript">
     </script>
-
     <script type="text/javascript">
       class Car {
-        constructor(vehicleBrand, vehicleClass, vehicleType, bodyStyle, capacity, price) {
+        constructor(vehicleName, vehicleBrand, vehicleClass, vehicleType, bodyStyle, capacity, price) {
+          this.vehicleName = vehicleName;
           this.vehicleBrand = vehicleBrand; 
           this.vehicleClass = vehicleClass; /*SUV, Sedan, Truck, Sports*/
           this.vehicleType = vehicleType; /* Civilian car, etc. */
@@ -54,6 +24,28 @@
         }
         /* useful for admin tools */
 
+        /*getters*/
+        getVehicleBrand(){
+          return this.vehicleBrand;
+        }
+        getVehicleClass(){
+          return this.vehicleClass;
+        }
+        getVehicleType(){
+          return this.vehicleType;
+        }
+        getBodyStyle(){
+          return this.bodyStyle;
+        }
+        getCapacity(){
+          return this.capacity;
+        }
+        getPrice(){
+          return this.price;
+        }
+        getVehicleName(){
+          return this.vehicleName;
+        }
 
         /* this function actually is only here until the first phase, this should be done by the admin */
         addDescription(desc)
@@ -143,19 +135,233 @@
       stock.push(dubsta);
 
 
+        /* not used 
+
+        
+        var e = document.getElementById("carListContainer");
+        var car = document.createElement("div");
+        car.className = dubsta.getVehicleClass;
+        var head = document.createElement("div"); //upper protion
+        var divider = document.createElement("div"); //middle portion
+        var body = document.createElement("div"); //portion w/ description
+        var headLeft = document.createElement("div"); //where pic would be under head
+        var headRight = document.createElement("div"); //where vehicle names, types...
+        
+        var img1 = document.createElement("img");
+        img1.setAttribute("src",dubsta.getPhotoLink(0));
+        img1.setAttribute("height", "100%");
+        img1.setAttribute("width", "100%");
+        headLeft.setAttribute("height", "250px");
+        headLeft.setAttribute("height", "250px");
+        headLeft.appendChild(img1);
+
+        
+        headRight.setAttribute("height", "250px");
+        headRight.setAttribute("height", "250px");
+
+
+        */
+
+        /* BY THE WAY GUYS!! 
+
+        IDing of price range starts at 2.. so if its within 0-999 price range it is 
+
+        '2' not '1', and then the next price range is 3.. etc 
+
+        */
+      
+
+
+        $(document).ready(function(){
+          $("#filterPrice").change(function(){
+            if($("#filterPrice").val() == "1"){
+              $(".2").show();  //similar to $(".food").css("visibility", "");
+              $(".3").show();
+              $(".4").show();
+              $(".5").show();
+              $(".6").show();
+            }
+            else if($("#filterPrice").val() == "2"){
+              $(".2").show(); //similar to $(".transpo").css("visibility", "hidden");
+              $(".3").hide();
+              $(".4").hide();
+              $(".5").hide();
+              $(".6").hide();
+            }
+            else if($("#filterPrice").val() == "3"){
+              $(".2").hide(); 
+              $(".3").show();
+              $(".4").hide();
+              $(".5").hide();
+              $(".6").hide();
+            }
+            else if($("#filterPrice").val() == "4"){
+              $(".2").hide(); 
+              $(".3").hide();
+              $(".4").show();
+              $(".5").hide();
+              $(".6").hide();
+            }
+            else if($("#filterPrice").val() == "5"){
+              $(".2").hide(); 
+              $(".3").hide();
+              $(".4").hide();
+              $(".5").show();
+              $(".6").hide();
+            }
+            else if($("#filterPrice").val() == "6"){
+              $(".2").hide(); 
+              $(".3").hide();
+              $(".4").hide();
+              $(".5").hide();
+              $(".6").show();
+            }
+          })
+
+          $("#filterClass").change(function(){
+            if($("#filterClass").val() == "1"){
+              $(".SUV").show();  
+              $(".Sedan").show();
+              $(".Sports").show();
+              $(".Truck").show();
+            }
+            else if($("#filterClass").val() == "2"){
+              $(".SUV").show();  
+              $(".Sedan").hide();
+              $(".Sports").hide();
+              $(".Truck").hide();
+            }
+            else if($("#filterClass").val() == "3"){
+              $(".SUV").hide(); 
+              $(".Sedan").show();
+              $(".Sports").hide();
+              $(".Truck").hide();
+            }
+            else if($("#filterClass").val() == "4"){
+              $(".SUV").hide();  
+              $(".Sedan").hide();
+              $(".Sports").show();
+              $(".Truck").hide();
+            }
+            else if($("#filterClass").val() == "5"){
+              $(".SUV").hide();  
+              $(".Sedan").hide();
+              $(".Sports").hide();
+              $(".Truck").show();
+            }
+          })
+
+        })
 
     </script>
     <style>
       .spacer{
-        height:100px;
+        height:55px;
       }
 
       h1{
         font-size: 40px;
+        font-family: sans-serif;
       }
 
-      #searchArea {
-        text-align: center;
+      body{
+        background-color: white;
+  
+        padding-left: 50px;
+        padding-right: 50px;
+
+        border: 30px solid gray;
+      }
+
+
+      #carListContainer{
+        margin: auto;
+        background-color:white;
+        width: 10 0%;
+      }
+
+      .capsule{
+        border: 2px solid black;
+        height: 500px;
+        width: 100%;
+      }
+
+      /* under CAPSULE */
+
+      .capsuleLeft{
+        position:absolute;
+        width:300px;
+      }
+      /* under capsuleLeft */
+      .carPic{
+        border:3px solid black;
+        float:left;
+        height: 250px;
+        width: 300px;
+      }
+
+      /* under capsuleLeft */
+      .carImg{
+        width:100%;
+        height:100%;
+      }
+
+      .carAtt{
+        float:left;
+        padding-left: 3px;
+        width: 300px;
+        height: 250px;
+        border-right:2px solid black;
+      }
+
+
+      .att{
+        font-family: serif;
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 0em;
+      }
+
+
+      /* under capsule */
+      .capsuleRight{
+        position: absolute;
+        left: 390px;
+        padding-left:1px solid white;
+        width: 1000px;
+      }
+
+      /* under capsuleRight */
+      .capsuleRight p{
+        font-size: 18px;
+      }
+
+      /* clases for cars */
+      .SUV{
+        border: 2px solid black;
+        margin-bottom: 10px;
+      }
+
+      .Truck{
+        border: 2px solid black;
+        margin-bottom: 10px;
+      }
+
+      .Sedan{
+        border: 2px solid black;
+        margin-bottom: 10px;
+      }
+
+      .Sports{
+        border: 2px solid black;
+        margin-bottom: 10px;
+      }
+
+      /* order button*/
+      #order{
+        height: 50px;
+        width: 270px;
+        font-size: 25px;
       }
 
     </style>
@@ -169,26 +375,26 @@
         <div class="container">
           <a class="navbar-brand" href="#">Virtus et Scientia</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+                <span class="navbar-toggler-icon"></span>
+              </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="user.html">User Profile</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="user.html">Username</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="search_car.html">Find your Car
-                  <span class = "sr-only"> (current) </span>
-                </a>
+                <a class="nav-link" href="index.html">Home
+                      <span class="sr-only">(current)</span>
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="search_car.html">Find your Car</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="build.html">Build</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="#">Contact</a>
               </li>
             </ul>
           </div>
@@ -198,39 +404,167 @@
 
     <div class="spacer">
     </div>
-
-    <div id = "searchArea">
-      <h1 style = "font-family:georgia,garamond,serif;"> Find your Car!!! </h1>
+    
+    <div id="container">
+      <h1> Find your Car!!! </h1>
       <!--Blue select-->
-      <select class="mdb-select md-form colorful-select dropdown-primary" searchable="Search here..">
-        <option value="1">SUV</option>
-        <option value="2">Truck</option>
-        <option value="3">Sports</option>
-        <option value="4">Sedan</option>
-        <option value="5">All</option>
+      <select class="mdb-select md-form colorful-select dropdown-primary" searchable="Search here.." id="filterClass">
+        <option value="1">All</option>
+        <option value="2">SUV</option>
+        <option value="3">Sedan</option>
+        <option value="4">Sports</option>
+        <option value="5">Truck</option>
       </select>
 
       <label class="mdb-main-label">Select</label>
 
-      <select class="mdb-select" searchable="Search here..">
-        <option value="1" disabled selected>Price Range</option>
-        <option value="2" data-icon="https://mdbootstrap.com/img/Photos/Avatars/avatar-1.jpg" class="rounded-circle">
-          $0 - $999
-          </option>
-        <option value="3" data-icon="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle">
-          $1000 - $9999
-          </option>
-        <option value="4" data-icon="https://mdbootstrap.com/img/Photos/Avatars/avatar-3.jpg" class="rounded-circle">
-          $10000 - $24999
-          </option>
-        <option value="5" data-icon="https://mdbootstrap.com/img/Photos/Avatars/avatar-3.jpg" class="rounded-circle">
-          $25000 - $49999
-          </option>
+      <select id="filterPrice" class="mdb-select" searchable="Search here..">
+        <option value="1" selected>All</option>
+        <option value="2">$0 - $999</option>
+        <option value="3">$1000 - $19999</option>
+        <option value="4">$20000 - $49999</option>
+        <option value="5">$50000 - $99999</option>
+        <option value="6">$100000 - $199000</option>
       </select>
-      <button class = "btn btn-info btn-sm"> Find </button>
+      <button> Find </button>
 
-      sort by... price, release date
-    
+      <div id="carListContainer">
+
+      <!-- INSERT CARS HERE! when adding cars, make the div according to type and class ex. (div class="Sports 3") adds a Sports car within $1000-$1999 price range (refer to options above) -->
+      <!-- just simply copy-paste my code for each car and edit the details -->
+
+      <!-- CAR 1 -->
+        <div class="SUV 4">
+          <div class="capsule">
+            <div class="capsuleLeft">
+              <div class="carPic">
+                <!-- might add carousel here for choosing color -->
+                <img class ="carImg" src="https://vignette.wikia.nocookie.net/gtawiki/images/c/c0/Dubsta-GTAV-front.png/revision/latest?cb=20160409171730">
+              </div>
+              <div class="carAtt">
+                <p class="att"> Name: Dubsta</p>
+                <p class="att"> Brand: Benefactor</p>
+                <p class="att"> Class: SUV</p>
+                <p class="att"> Body Style: 4-Door SUV</p>
+                <p class="att"> Capacity: 4 people</p>
+                <p class="att"> Price: $23750</p>
+                <button type="button" class="btn btn-success" id = "order" >Add to Cart</button>
+              </div>
+            </div>
+            <div class="capsuleRight">
+              <p>
+                The Dubsta features good ground clearance, such that its axles and differential can be viewed from a slightly high angle. The SUV features a high displacement engine, a V12 engine based on the badge on the back. This is sent through a permanent four wheel drive system, and then finally through large, high-profile tyres to the ground. The Dubsta is one of the most capable off-roading SUV's, since it has the ability to climb over rocks and make it up steep mountains without getting damaged at all and without hesitation, as its V12 supplies an excellent amount of torque.
+              </p>
+              <p>
+                Its heavy weight can be useful when ramming other cars or pushing them. By feathering the throttle, it is possible to push a medium weight car with ease. The V12 engine, if untuned, will struggle against the weight and thus it cannot attain high speeds, and has average acceleration.
+              </p>
+            </div>  
+          </div>
+        </div>
+
+        <!-- CAR 2 -->
+        <div class="Sports 4">
+          <div class="capsule">
+            <div class="capsuleLeft">
+              <div class="carPic">
+                <!-- might add carousel here for chooding color -->
+                <img class ="carImg" src="https://vignette.wikia.nocookie.net/gtawiki/images/7/78/Dominator-GTAV-front.png/revision/latest?cb=20160702195350">
+              </div>
+              <div class="carAtt">
+                <p class="att"> Name: Dominator</p>
+                <p class="att"> Brand: Vapid</p>
+                <p class="att"> Class: Sports</p>
+                <p class="att"> Body Style: 2-Door Muscle Car</p>
+                <p class="att"> Capacity: 2 people</p>
+                <p class="att"> Price: $35000</p>
+                <button type="button" class="btn btn-success" id = "order" >Add to Cart</button>
+              </div>
+            </div>
+            <div class="capsuleRight">
+              <p>
+                The main body of the Dominator seems to be heavily inspired by the fifth generation Ford Mustang, with flared wheel arches, connected to the elevated area that spans the lower body. The front headlight pockets are taken from the fifth generation Mustang, with the circular headlights, squared grille and hood being skewed forwards and down.
+                Halfway up the body, the main body line makes a sharp angular turn, signaling the classical inspiration of the first generation Mustang. The car features twelve spoke alloy wheels, wrapped in low profile tires.
+              </p>
+              <p>
+                The rear hatch closely resembles a fastback design, also taken from the first generation Mustang. The front grille design, rear fascia and tail lights and are derived straight from the 1970 Ford Mustang fastback, as is the name Dominator, which was the name of a hood available on early 70's Mustangs. The rear bumper features circular twin-exit exhaust with chrome tips.
+              </p>
+              <p>
+                The vehicle features a modeled V8 engine with a single bank of cams on either side of the engine. On the top is a large cylindrical air filter wrapped with red filter paper. The engine sound is a very high torque V8 engine, with low-silenced exhausts. The badges indicates that the Dominator is powered by a 450cui (7.4L) Supercharged engine.
+              </p>
+            </div>  
+          </div>
+        </div>
+
+        <!-- CAR 3 -->
+        <div class="Sports 3">
+          <div class="capsule">
+            <div class="capsuleLeft">
+              <div class="carPic">
+                <!-- might add carousel here for chooding color -->
+                <img class ="carImg" src="https://vignette.wikia.nocookie.net/gtawiki/images/2/2f/Tornado-GTAV-front.png/revision/latest?cb=20180331183746">
+              </div>
+              <div class="carAtt">
+                <p class="att"> Name: Tornado</p>
+                <p class="att"> Brand: DeClasse</p>
+                <p class="att"> Class: Sports</p>
+                <p class="att"> Body Style: 2-Door Hardtop/Convertible</p>
+                <p class="att"> Capacity: 2 people</p>
+                <p class="att"> Price: $55500</p>
+                <button type="button" class="btn btn-success" id = "order" >Add to Cart</button>
+              </div>
+            </div>
+            <div class="capsuleRight">
+              <p>
+                The Tornado still resembles a 1958 Chevrolet Bel Air in its front end and overall shape, but the years of the ends have been swapped; the front end now has the '58 Bel Air design and the rear now takes influence from the 1957 Chevrolet or 1957 Bel Air. New features include a bumper similar to a 1957 Cadillac Eldorado, dual headlights (with black surrounds like the '57) and 1957 Bel Air style rear wings and trunk. Other than the dual headlights, and '57 Chevy Bel Air rear, it resembles its predecessor. It also has some design cues taken from a 1958 Plymouth Belvedere.
+              </p>
+              <p>
+                Having only two doors, the Tornado is only designed to carry two occupants. The car does make up for this with its above average top speed and acceleration, as well as its generally stable cornering (even with its long wheelbase that is supposed to hamper the car's maneuverability).
+              </p>
+              <p>
+                The engine is modeled after a V8 with single-overhead camshafts and a large cylindrical air filter. It is coupled to a 4-speed gearbox in a front engine, rear wheel drive layout.
+              </p>
+            </div>  
+          </div>
+        </div>
+
+        <!-- CAR 4 -->
+        <div class="Truck 5">
+          <div class="capsule">
+            <div class="capsuleLeft">
+              <div class="carPic">
+                <!-- might add carousel here for chooding color -->
+                <img class ="carImg" src="https://vignette.wikia.nocookie.net/gtawiki/images/4/47/Kamacho-GTAO-front.png/revision/latest?cb=20190128192114">
+              </div>
+              <div class="carAtt">
+                <p class="att"> Name: Kamacho</p>
+                <p class="att"> Brand: Canis</p>
+                <p class="att"> Class: Truck</p>
+                <p class="att"> Body Style: 4-door Utility Truck</p>
+                <p class="att"> Capacity: 4 people</p>
+                <p class="att"> Price: $18500</p>
+                <button type="button" class="btn btn-success" id = "order" >Add to Cart</button>
+              </div>
+            </div>
+            <div class="capsuleRight">
+              <p>
+                The vehicle is strongly based on the Jeep Crew Chief 715 concept, which is itself a homage to the Kaiser Jeep M715. Notable differences include the headlight setup of round and rectangular headlamps rather than the Crew Chief's double round headlamps, as well as a minor change on the lower lamps to feature yellow and white lights. The rear end features a dual tail light setup of red and yellow, as well as white lights on the bumper, opposed to the characteristic Jeep's single light setup of red and white.
+              </p>
+              <p>
+                The Kamacho features a soft top similar to the Mesa and the Crusader, as well as a floodlight bar similar to the Riata and the Barrage. As expected from a vehicle of its type, sump guards are visible in both ends of the underside and static winches on the bumpers.
+              </p>
+              <p>
+                The Kamacho is an adept offroader, with high torque and ground clearance, giving it immense capability offroad. It is capable of tackling even the roughest terrain, with 50/50 torque distribution, giving it an advantage on uneven terrain. Durability is good and can be further improved with the addition of bullbars.
+              </p>
+              <p>
+                The vehicle is powered by a single-cam V8 engine with two air filters on it, powering all four wheels.
+              </p>
+            </div>  
+          </div>
+        </div>
+
+
+      </div>
     </div>
-  </body>
+</body>
+
 </html>

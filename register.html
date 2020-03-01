@@ -98,9 +98,35 @@
               <td><input type="file", accept="image/*", id="license", name="license"></td>
           </tr>
           <tr>
-              <td><button id="submit" class = "btn btn-primary" onclick = "window.location.href = 'user.html'">Submit</button></td>
+              <td><button id="submit" class = "btn btn-primary">Submit</button></td>
           </tr>
       </table>
+
+      <p id = "warning"></p>
+
     </div>
+
+    <script type = "text/javascript">
+      function checkField(field, bool) {
+        var valid = bool;
+
+        if(field.val() == '') {
+          valid = false;
+          field.css('border-color', 'red');
+          $("#warning").text('Please enter the required field/s.');
+        }
+        else {
+          field.css('border-color', 'white');
+        }
+
+        return valid;
+      }
+
+      $("#submit").click(function() {
+        var valid = true;
+        valid = checkField($("#fname"), valid);
+      });
+    </script>
+
   </body>
 </html>
